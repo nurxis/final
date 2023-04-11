@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@600&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display&family=EB+Garamond&family=Familjen+Grotesk:wght@600&family=Jost:wght@400;700;800&family=Koulen&family=Marcellus&family=Monsieur+La+Doulaise&family=Oswald:wght@200;300&family=Pinyon+Script&family=Roboto:wght@300&display=swap');
+body {
+    overflow: hidden;
+  text-transform: uppercase;
+}
+.main {
+    max-width: 1920px;
+    min-width: 1280px;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.photo {
+    height: 38vw;
+    background-image: url(photo_3.jpg);
+    background-size: cover;
+    margin-top: 3vw;
+
+    
+}
+
+
+
+.text1 {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 250px;
+    line-height: 361px;
+   margin: 0;
+   
+}
+
+h1 {
+    display: inline;
+}
+
+.text2 {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    margin-left: 74vw;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: inline;
+}
+
+.text2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.text2:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+body .cursor__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+
+
+body .cursor__ball circle {
+    fill: rgb(255, 255, 255);
+}
+
+.block:hover {
+    background-color: black;
+    color: white;
+}
+
+#container_ .main a:hover {
+    color: white;
+}
+
+h1 {
+    overflow: hidden;
+    display: block;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+    animation-delay: 10ms;
+}
+.photo {
+    display: block;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) ;
+}
+
+.text2 {
+    overflow: hidden;
+    display: block;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+}
+
+@keyframes reveal {
+    0% {
+      transform: translate(0,100%);
+    }
+    100% {
+      transform: translate(0,0);
+    }
+  }

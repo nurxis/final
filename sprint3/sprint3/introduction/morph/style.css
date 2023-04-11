@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@600&family=Familjen+Grotesk:wght@600&family=Jost&family=Koulen&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@600&family=EB+Garamond&family=Familjen+Grotesk:wght@600&family=Jost:wght@400;500&family=Koulen&family=Roboto:wght@300&display=swap');
+
+body {
+	margin: 0px;
+}
+
+#container {
+	position: absolute;
+	margin: auto;
+	width: 100vw;
+	height: 80pt;
+	top: 0;
+	bottom: 0;
+	
+	filter: url(#threshold) blur(0.6px);
+}
+
+
+#text1, #text2, #text3, #text4, #text5, #text6, #text7 {
+	position: absolute;
+	width: 100%;
+	display: inline-block;
+	
+	
+	font-size: 80pt;
+	
+	text-align: center;
+	
+	user-select: none;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+}
+
+.menu_dot {
+	width: 35px;
+	height: 35px;
+	position: fixed;
+	margin-left: 90vw;
+	bottom: 7vw;
+}
+
+body .cursor__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+body .cursor__ball circle {
+    fill: crimson;
+}

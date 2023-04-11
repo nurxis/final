@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+<div class="main_page">
+    <div class="center">
+        <h2 class="first animate__animated animate__fadeInUp">NEUE KUNSTBÜCHER</h2>
+        <div class="rectangle animate__animated animate__fadeInUp"></div>
+        <h1 class="second animate__animated animate__fadeInUp">BEI BRUCKMANN</h1>
+        <p class="third animate__animated animate__fadeInUp">Einzelprospekte dieser Bände liegen bei Ihrem Buchhändler auf<br> oder können- falls dort gerade
+            nicht greifbar- auf Verlangen vom Verlag kostenlos direkt bezogen werden.<br>
+            Die Werke selbst hält Ihr Buchhändler auf Lager oder besorgt sie Ihnen schnellstens.</p>
+    </div>
+    <a href="../inhalt/index.html">
+        <div class="menu_dot animate__animated animate__fadeInUp"><img src="menu_button_.png" ></div>
+    </a>
+    <div class="bottom">
+        <h3>VERLAG F. BRUCKMANN</h3>
+        <div class="bottom_line">Postabschrift: München 20, Abholfach</div>
+        <div class="rectangle_2 animate__animated animate__fadeInUp"></div>
+        <div class="bottom_line"> Ulrich Christoffel, Eugéne Delacroix</div>
+    </div>
+   
+</div>
+<div class="cursor">
+    <div class="cursor__ball cursor__ball--big ">
+        <svg height="30" width="30">
+            <circle cx="15" cy="15" r="8" stroke-width="0"></circle>
+        </svg>
+    </div>
+
+    <div class="cursor__ball cursor__ball--small">
+        <svg height="10" width="10">
+            <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+        </svg>
+    </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script>
+const $bigBall = document.querySelector('.cursor__ball--big');
+const $smallBall = document.querySelector('.cursor__ball--small');
+const $hoverables = document.querySelectorAll('a');
+
+// Listeners
+document.body.addEventListener('mousemove', onMouseMove);
+for (let i = 0; i < $hoverables.length; i++) {
+    $hoverables[i].addEventListener('mouseenter', onMouseHover);
+    $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+}
+
+// Move the cursor
+function onMouseMove(e) {
+    TweenMax.to($bigBall, .4, {
+        x: e.clientX - 15,
+        y: e.clientY - 15
+    });
+
+    TweenMax.to($smallBall, .1, {
+        x: e.clientX - 5,
+        y: e.clientY - 7
+    });
+
+}
+
+// Hover an element
+function onMouseHover() {
+    TweenMax.to($bigBall, .3, {
+        scale: 1.7
+    });
+
+}
+function onMouseHoverOut() {
+    TweenMax.to($bigBall, .3, {
+        scale: 1
+    });
+
+}
+</script>
+</body>
+</html>
